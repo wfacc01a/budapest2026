@@ -2,935 +2,1240 @@
 <html lang="it">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Disabilita la cache del browser -->
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    
-    <title>Programma di Viaggio - Budapest 2026</title>
+  <!-- Disabilita la cache del browser -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
 
-    <!-- Importazione Font 'Inter' da Google Fonts per massima leggibilità su mobile -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <title>Programma di Viaggio - Budapest 2026</title>
 
-    <style>
-        :root {
-            /* Palette Colori ad Alta Leggibilità */
-            --bg-body: #f8fafc;
-            --card-bg: #ffffff;
-            --text-main: #0f172a;       /* Quasi nero per massimo contrasto */
-            --text-muted: #475569;      /* Grigio scuro per dettagli */
-            --primary: #4338ca;         /* Indaco profondo e visibile */
-            --primary-light: #eef2ff;
-            --accent-year: #facc15;
-            --border-color: #cbd5e1;
-            
-            /* Typography Mobile-First */
-            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        }
+  <!-- Importazione Font 'Inter' da Google Fonts per massima leggibilità su mobile -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
 
-        * {
-            box-sizing: border-box;
-        }
+  <style>
+    :root {
+      /* Palette Colori ad Alta Leggibilità */
+      --bg-body: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      /* Quasi nero per massimo contrasto */
+      --text-muted: #475569;
+      /* Grigio scuro per dettagli */
+      --primary: #4338ca;
+      /* Indaco profondo e visibile */
+      --primary-light: #eef2ff;
+      --accent-year: #facc15;
+      --border-color: #cbd5e1;
 
-        body {
-            background-color: var(--bg-body);
-            color: var(--text-main);
-            padding: 20px 12px;
-            font-family: var(--font-family);
-            margin: 0;
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
+      /* Typography Mobile-First */
+      --font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
 
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
+    * {
+      box-sizing: border-box;
+    }
 
-        /* --- LOGO ESTERNO SUPERIORE --- */
-        .top-logo-wrapper {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: -10px;
-        }
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-main);
+      padding: 20px 12px;
+      font-family: var(--font-family);
+      margin: 0;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
 
-        .top-logo {
-            max-height: 90px;
-            width: auto;
-            object-fit: contain;
-            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.06));
-        }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
 
-        /* --- HERO BANNER --- */
-        .hero-header {
-            position: relative;
-            width: 100%;
-            height: 300px;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            display: flex;
-            align-items: flex-end;
-            background-color: #0f172a;
-        }
+    /* --- LOGO ESTERNO SUPERIORE --- */
+    .top-logo-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: -75px;
+    }
 
-        .hero-bg {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-        }
+    .top-logo {
+      max-height: 90px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.06));
+      z-index: 5;
+    }
 
-        .hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg,
-                    rgba(15, 23, 42, 0.2) 0%,
-                    rgba(15, 23, 42, 0.75) 100%);
-            z-index: 1;
-        }
+    /* --- HERO BANNER --- */
+    .hero-header {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: flex-end;
+      background-color: #0f172a;
+    }
 
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            padding: 24px;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
 
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 6px 14px;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            color: var(--primary);
-            font-size: 0.85rem;
-            font-weight: 800;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            width: fit-content;
-        }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg,
+          rgba(15, 23, 42, 0.2) 0%,
+          rgba(15, 23, 42, 0.75) 100%);
+      z-index: 1;
+    }
 
-        .hero-title {
-            margin: 0;
-            font-size: clamp(2.2rem, 7vw, 3.8rem);
-            font-weight: 900;
-            color: #ffffff;
-            line-height: 1.1;
-            letter-spacing: -0.5px;
-            display: flex;
-            align-items: baseline;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 24px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
 
-        .hero-year {
-            font-size: clamp(1.6rem, 5vw, 2.5rem);
-            font-weight: 800;
-            color: var(--accent-year);
-        }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      color: var(--primary);
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      width: fit-content;
+    }
 
-        /* --- LISTA GIORNI --- */
-        .week-vertical-list {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-        }
+    .hero-title {
+      margin: 0;
+      font-size: clamp(2.2rem, 7vw, 3.8rem);
+      font-weight: 900;
+      color: #ffffff;
+      line-height: 1.1;
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
 
-        .day-section {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 16px;
-        }
+    .hero-year {
+      font-size: clamp(1.6rem, 5vw, 2.5rem);
+      font-weight: 800;
+      color: var(--accent-year);
+    }
 
-        @media (min-width: 900px) {
-            .day-section {
-                grid-template-columns: 1fr 320px;
-                gap: 24px;
-            }
-        }
+    /* --- LISTA GIORNI --- */
+    .week-vertical-list {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
 
-        .day-title {
-            grid-column: 1 / -1;
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--primary);
-            padding-left: 12px;
-            border-left: 5px solid var(--primary);
-            margin: 0 0 4px 0;
-            letter-spacing: -0.3px;
-        }
+    .day-section {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
 
-        .day-cards-wrapper {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
+    @media (min-width: 900px) {
+      .day-section {
+        grid-template-columns: 1fr 320px;
+        gap: 24px;
+      }
+    }
 
-        /* CARDS ORARI - OTTIMIZZATE PER TOUCH & LETTURA */
-        .time-card {
-            background: var(--card-bg);
-            border-radius: 12px;
-            display: flex;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-            border: 1px solid var(--border-color);
-        }
+    .day-title {
+      grid-column: 1 / -1;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--primary);
+      padding-left: 12px;
+      border-left: 5px solid var(--primary);
+      margin: 0 0 4px 0;
+      letter-spacing: -0.3px;
+    }
 
-        .card-time-col {
-            flex: 0 0 80px;
-            background-color: var(--primary-light);
-            border-right: 1px solid #dbeafe;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.1rem;
-            font-weight: 800;
-            color: var(--primary);
-            padding: 12px 8px;
-        }
+    .day-cards-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
 
-        .card-content-col {
-            flex: 1;
-            padding: 14px 16px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
+    /* CARDS ORARI - OTTIMIZZATE PER TOUCH & LETTURA */
+    .time-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      display: flex;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      border: 1px solid var(--border-color);
+    }
 
-        .card-details {
-            font-size: 1.05rem; /* Dimensione aumentata per mobile */
-            color: var(--text-main);
-            margin: 0;
-            font-weight: 500;
-        }
+    .card-time-col {
+      flex: 0 0 80px;
+      background-color: var(--primary-light);
+      border-right: 1px solid #dbeafe;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--primary);
+      padding: 12px 8px;
+    }
 
-        .card-details a {
-            color: var(--primary);
-            text-decoration: underline;
-            font-weight: 600;
-        }
+    .card-content-col {
+      flex: 1;
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
 
-        .day-side-image {
-            width: 100%;
-            height: 200px;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-        }
+    .card-details {
+      font-size: 1.05rem;
+      /* Dimensione aumentata per mobile */
+      color: var(--text-main);
+      margin: 0;
+      font-weight: 500;
+    }
 
-        @media (min-width: 900px) {
-            .day-side-image {
-                height: 100%;
-                min-height: 250px;
-            }
-        }
+    .card-details a {
+      color: var(--primary);
+      text-decoration: underline;
+      font-weight: 600;
+    }
 
-        .day-side-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+    .day-side-image {
+      width: 100%;
+      height: 200px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+    }
 
-        /* --- INFO UTILI --- */
-        .info-section {
-            background-color: var(--card-bg);
-            border-radius: 16px;
-            padding: 24px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-            border: 1px solid var(--border-color);
-        }
+    @media (min-width: 900px) {
+      .day-side-image {
+        height: 100%;
+        min-height: 250px;
+      }
+    }
 
-        .info-section h2 {
-            font-size: 1.4rem;
-            font-weight: 800;
-            color: var(--text-main);
-            margin-top: 0;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+    .day-side-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 16px;
-        }
+    /* --- INFO UTILI --- */
+    .info-section {
+      background-color: var(--card-bg);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+      border: 1px solid var(--border-color);
+    }
 
-        .info-card {
-            background-color: #f1f5f9;
-            border-radius: 12px;
-            padding: 18px;
-            border: 1px solid #e2e8f0;
-        }
+    .info-section h2 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-top: 0;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-        .info-card h3 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-top: 0;
-            margin-bottom: 8px;
-        }
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
 
-        .info-card p {
-            font-size: 0.98rem;
-            color: var(--text-muted);
-            line-height: 1.5;
-            margin: 0;
-            font-weight: 500;
-        }
+    .info-card {
+      background-color: #f1f5f9;
+      border-radius: 12px;
+      padding: 18px;
+      border: 1px solid #e2e8f0;
+    }
 
-        /* --- TABELLA PRENOTAZIONI MOBILE FRIENDLY --- */
-        .table-card-section {
-            background-color: var(--card-bg);
-            border-radius: 16px;
-            padding: 24px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-            border: 1px solid var(--border-color);
-        }
+    .info-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
 
-        .table-header-title h2 {
-            font-size: 1.3rem;
-            font-weight: 800;
-            color: var(--text-main);
-            margin: 0 0 16px 0;
-        }
+    .info-card p {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin: 0;
+      font-weight: 500;
+    }
 
-        .table-wrapper {
-            overflow-x: auto;
-            border-radius: 10px;
-            border: 1px solid var(--border-color);
-        }
+    /* --- TABELLA PRENOTAZIONI MOBILE FRIENDLY --- */
+    .table-card-section {
+      background-color: var(--card-bg);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+      border: 1px solid var(--border-color);
+    }
 
-        table.modern-table {
-            width: 100%;
-            border-collapse: collapse;
-            background-color: var(--card-bg);
-            font-size: 1rem;
-        }
+    .table-header-title h2 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin: 0 0 16px 0;
+    }
 
-        table.modern-table th {
-            background-color: var(--primary);
-            color: #ffffff;
-            padding: 12px 16px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            text-align: left;
-        }
+    .table-wrapper {
+      overflow-x: auto;
+      border-radius: 10px;
+      border: 1px solid var(--border-color);
+    }
 
-        table.modern-table td {
-            padding: 12px 16px;
-            border-bottom: 1px solid #f1f5f9;
-            color: var(--text-main);
-            font-weight: 600;
-        }
+    table.modern-table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: var(--card-bg);
+      font-size: 1rem;
+    }
 
-        .pnr-badge {
-            display: inline-block;
-            padding: 4px 10px;
-            background-color: var(--primary-light);
-            color: var(--primary);
-            font-family: monospace;
-            font-weight: 800;
-            font-size: 0.95rem;
-            border-radius: 6px;
-            border: 1px solid #c7d2fe;
-        }
+    table.modern-table th {
+      background-color: var(--primary);
+      color: #ffffff;
+      padding: 12px 16px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      text-align: left;
+    }
 
-        /* --- SEZIONE MENU --- */
-        .menu-section {
-            background-color: var(--card-bg);
-            border-radius: 16px;
-            padding: 24px;
-            border: 1px solid var(--border-color);
-            display: flex;
-            flex-direction: column;
-            gap: 28px;
-        }
+    table.modern-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid #f1f5f9;
+      color: var(--text-main);
+      font-weight: 600;
+    }
 
-        .menu-main-title {
-            font-size: 1.4rem;
-            font-weight: 800;
-            color: var(--text-main);
-            margin: 0;
-        }
+    .pnr-badge {
+      display: inline-block;
+      padding: 4px 10px;
+      background-color: var(--primary-light);
+      color: var(--primary);
+      font-family: monospace;
+      font-weight: 800;
+      font-size: 0.95rem;
+      border-radius: 6px;
+      border: 1px solid #c7d2fe;
+    }
 
-        .menu-day-subtitle {
-            font-size: 1.2rem;
-            font-weight: 800;
-            color: var(--primary);
-            margin: 0 0 12px 0;
-            padding-bottom: 6px;
-            border-bottom: 2px solid var(--primary-light);
-        }
+    /* --- GUIDA CHECK-IN RYANAIR --- */
+    .boarding-guide-section {
+      background-color: var(--card-bg);
+      border-radius: 16px;
+      padding: 24px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
 
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-            gap: 20px;
-        }
+    .guide-header h2 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin: 0 0 8px 0;
+    }
 
-        .menu-card {
-            background-color: #f8fafc;
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-            overflow: hidden;
-        }
+    .guide-header p {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
 
-        .menu-card-header {
-            background-color: var(--primary);
-            color: #ffffff;
-            padding: 12px 16px;
-            font-size: 1.05rem;
-            font-weight: 700;
-        }
+    .steps-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
 
-        .menu-courses {
-            padding: 16px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            background-color: var(--card-bg);
-            border-bottom: 1px solid #e2e8f0;
-        }
+    .step-card {
+      background-color: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
 
-        .menu-item-type {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            color: var(--primary);
-            font-weight: 800;
-        }
+    .step-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background-color: var(--primary);
+      color: #ffffff;
+      font-weight: 800;
+      border-radius: 50%;
+      font-size: 0.95rem;
+    }
 
-        .menu-item-title {
-            font-size: 1rem;
-            color: var(--text-main);
-            font-weight: 600;
-        }
+    .step-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin: 0;
+    }
 
-        .menu-item-orig {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            font-style: italic;
-        }
+    .step-description {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin: 0;
+      line-height: 1.5;
+    }
 
-        .menu-people {
-            padding: 16px;
-        }
+    .step-image-container {
+      width: 100%;
+      height: 320px;
+      background-color: #e2e8f0;
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px dashed var(--border-color);
+    }
 
-        .menu-people h4 {
-            margin: 0 0 10px 0;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-        }
+    .step-image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
 
-        .menu-people-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
+    /* --- SEZIONE MENU --- */
+    .menu-section {
+      background-color: var(--card-bg);
+      border-radius: 16px;
+      padding: 24px;
+      border: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
 
-        .menu-people-list li {
-            font-size: 0.95rem;
-            color: var(--text-main);
-            padding: 6px 10px;
-            background-color: var(--card-bg);
-            border-radius: 6px;
-            border: 1px solid #e2e8f0;
-            font-weight: 600;
-        }
+    .menu-main-title {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin: 0;
+    }
 
-        .allergen-tag {
-            font-size: 0.75rem;
-            font-weight: 700;
-            color: #047857;
-            background-color: #d1fae5;
-            padding: 2px 6px;
-            border-radius: 4px;
-            display: inline-block;
-            margin-top: 4px;
-        }
-    </style>
+    .menu-day-subtitle {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin: 0 0 12px 0;
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--primary-light);
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 20px;
+    }
+
+    .menu-card {
+      background-color: #f8fafc;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+    }
+
+    .menu-card-header {
+      background-color: var(--primary);
+      color: #ffffff;
+      padding: 12px 16px;
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+
+    .menu-courses {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      background-color: var(--card-bg);
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .menu-item-type {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    .menu-item-title {
+      font-size: 1rem;
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    .menu-item-orig {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    .menu-people {
+      padding: 16px;
+    }
+
+    .menu-people h4 {
+      margin: 0 0 10px 0;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    .menu-people-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .menu-people-list li {
+      font-size: 0.95rem;
+      color: var(--text-main);
+      padding: 6px 10px;
+      background-color: var(--card-bg);
+      border-radius: 6px;
+      border: 1px solid #e2e8f0;
+      font-weight: 600;
+    }
+
+    .allergen-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #047857;
+      background-color: #d1fae5;
+      padding: 2px 6px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-top: 4px;
+    }
+  </style>
 </head>
 
 <body>
 
-    <div class="container">
+  <div class="container">
 
-        <!-- LOGO ESTERNO PRIMA DELL'IMMAGINE DI SFONDO -->
-        <div class="top-logo-wrapper">
-            <img src="Umarell.png" alt="Logo Umarell" class="top-logo">
+    <!-- LOGO ESTERNO PRIMA DELL'IMMAGINE DI SFONDO -->
+    <div class="top-logo-wrapper">
+      <img src="Umarell1.png" alt="Logo Umarell" class="top-logo">
+    </div>
+
+    <!-- HERO BANNER CON SFONDO -->
+    <div class="hero-header">
+      <img src="budapest-sera3.jpg" alt="Sfondo Budapest" class="hero-bg">
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span>✈️</span>
+          <span>Programma di Viaggio</span>
         </div>
 
-        <!-- HERO BANNER CON SFONDO -->
-        <div class="hero-header">
-            <img src="budapest-sera3.jpg" alt="Sfondo Budapest" class="hero-bg">
-            <div class="hero-overlay"></div>
+        <h1 class="hero-title">
+          BUDAPEST
+          <span class="hero-year">2026</span>
+        </h1>
+      </div>
+    </div>
 
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <span>✈️</span>
-                    <span>Programma di Viaggio</span>
-                </div>
+    <div class="week-vertical-list">
 
-                <h1 class="hero-title">
-                    BUDAPEST
-                    <span class="hero-year">2026</span>
-                </h1>
+      <!-- MARTEDI' 6 OTTOBRE -->
+      <section class="day-section">
+        <h2 class="day-title">Martedì 6 Ottobre</h2>
+
+        <div class="day-cards-wrapper">
+          <div class="time-card">
+            <div class="card-time-col">05:00</div>
+            <div class="card-content-col">
+              <p class="card-details">Ritrovo presso l’area gruppi di fronte al check-in n. 44 dell’aeroporto di
+                Bergamo.</p>
             </div>
+          </div>
+
+          <div class="time-card">
+            <div class="card-time-col">06:40</div>
+            <div class="card-content-col">
+              <p class="card-details">Volo Ryanair Bergamo ➔ Budapest.</p>
+            </div>
+          </div>
+
+          <div class="time-card">
+            <div class="card-time-col">08:15</div>
+            <div class="card-content-col">
+              <p class="card-details">Arrivo a Budapest e trasferimento all’hotel con mezzi pubblici.</p>
+            </div>
+          </div>
+
+          <div class="time-card">
+            <div class="card-time-col">10:00</div>
+            <div class="card-content-col">
+              <p class="card-details">Arrivo all’hotel <a
+                  href="https://www.eurostarshotels.it/eurostars-danube-budapest.html" target="_blank"
+                  rel="noopener">Eurostars Danube Budapest</a>.<br>Deposito bagagli in hotel in attesa del check-in.</p>
+            </div>
+          </div>
+
+          <div class="time-card">
+            <div class="card-time-col">10:30</div>
+            <div class="card-content-col">
+              <p class="card-details">Visita libera alla città.</p>
+            </div>
+          </div>
+
+          <div class="time-card">
+            <div class="card-time-col">12:00</div>
+            <div class="card-content-col">
+              <p class="card-details">Pranzo libero.</p>
+            </div>
+          </div>
+
+          <div class="time-card">
+            <div class="card-time-col">14:00</div>
+            <div class="card-content-col">
+              <p class="card-details">Trasferimento nell'area del Castello di Buda.</p>
+            </div>
+          </div>
+
+          <div class="time-card">
+            <div class="card-time-col">14:30</div>
+            <div class="card-content-col">
+              <p class="card-details">Incontro con la guida turistica.<br>Visita del Quartiere del Castello di Buda
+                (Chiesa di Mattia, Bastione dei Pescatori e Palazzo Reale).</p>
+            </div>
+          </div>
+
+          <div class="time-card">
+            <div class="card-time-col">17:30</div>
+            <div class="card-content-col">
+              <p class="card-details">Visita libera alla città.</p>
+            </div>
+          </div>
+
+          <div class="time-card">
+            <div class="card-time-col">19:00</div>
+            <div class="card-content-col">
+              <p class="card-details">Trasferimento al ristorante.</p>
+            </div>
+          </div>
+
+          <div class="time-card">
+            <div class="card-time-col">19:30</div>
+            <div class="card-content-col">
+              <p class="card-details">Cena di gruppo presso il ristorante <a href="https://kehli.hu/home-en"
+                  target="_blank" rel="noopener">Kéhli Vendéglő</a>.</p>
+            </div>
+          </div>
+
+          <div class="time-card">
+            <div class="card-time-col">21:30</div>
+            <div class="card-content-col">
+              <p class="card-details">Rientro in Hotel.</p>
+            </div>
+          </div>
         </div>
 
-        <div class="week-vertical-list">
+        <div class="day-side-image">
+          <img src="budapest-castello2.jpg" alt="Castello di Buda">
+        </div>
+      </section>
 
-            <!-- MARTEDI' 6 OTTOBRE -->
-            <section class="day-section">
-                <h2 class="day-title">Martedì 6 Ottobre</h2>
+      <!-- MERCOLEDI' 7 OTTOBRE -->
+      <section class="day-section">
+        <h2 class="day-title">Mercoledì 7 Ottobre</h2>
 
-                <div class="day-cards-wrapper">
-                    <div class="time-card">
-                        <div class="card-time-col">05:00</div>
-                        <div class="card-content-col">
-                            <p class="card-details">Ritrovo presso l’area gruppi di fronte al check-in n. 44 dell’aeroporto di Bergamo.</p>
-                        </div>
-                    </div>
+        <div class="day-cards-wrapper">
+          <div class="time-card">
+            <div class="card-time-col">08:30</div>
+            <div class="card-content-col">
+              <p class="card-details">Partenza dall'hotel.</p>
+            </div>
+          </div>
 
-                    <div class="time-card">
-                        <div class="card-time-col">06:40</div>
-                        <div class="card-content-col">
-                            <p class="card-details">Volo Ryanair Bergamo ➔ Budapest.</p>
-                        </div>
-                    </div>
+          <div class="time-card">
+            <div class="card-time-col">09:00</div>
+            <div class="card-content-col">
+              <p class="card-details">Incontro con la guida turistica.<br>Tour guidato: Grande Sinagoga, centro di Pest,
+                Ponte delle Catene, Basilica di Santo Stefano e Parlamento.</p>
+            </div>
+          </div>
 
-                    <div class="time-card">
-                        <div class="card-time-col">08:15</div>
-                        <div class="card-content-col">
-                            <p class="card-details">Arrivo a Budapest e trasferimento all’hotel con mezzi pubblici.</p>
-                        </div>
-                    </div>
+          <div class="time-card">
+            <div class="card-time-col">12:00</div>
+            <div class="card-content-col">
+              <p class="card-details">Pranzo libero.</p>
+            </div>
+          </div>
 
-                    <div class="time-card">
-                        <div class="card-time-col">10:00</div>
-                        <div class="card-content-col">
-                            <p class="card-details">Arrivo all’hotel <a href="https://www.eurostarshotels.it/eurostars-danube-budapest.html" target="_blank" rel="noopener">Eurostars Danube Budapest</a>.<br>Deposito bagagli in hotel in attesa del check-in.</p>
-                        </div>
-                    </div>
+          <div class="time-card">
+            <div class="card-time-col">14:30</div>
+            <div class="card-content-col">
+              <p class="card-details">Trasferimento con mezzi pubblici.</p>
+            </div>
+          </div>
 
-                    <div class="time-card">
-                        <div class="card-time-col">10:30</div>
-                        <div class="card-content-col">
-                            <p class="card-details">Visita libera alla città.</p>
-                        </div>
-                    </div>
+          <div class="time-card">
+            <div class="card-time-col">15:00</div>
+            <div class="card-content-col">
+              <p class="card-details">Visita alla Piazza degli Eroi e al Castello di Vajdahunyad.</p>
+            </div>
+          </div>
 
-                    <div class="time-card">
-                        <div class="card-time-col">12:00</div>
-                        <div class="card-content-col">
-                            <p class="card-details">Pranzo libero.</p>
-                        </div>
-                    </div>
+          <div class="time-card">
+            <div class="card-time-col">17:00</div>
+            <div class="card-content-col">
+              <p class="card-details">Trasferimento con mezzi pubblici.</p>
+            </div>
+          </div>
 
-                    <div class="time-card">
-                        <div class="card-time-col">14:00</div>
-                        <div class="card-content-col">
-                            <p class="card-details">Trasferimento nell'area del Castello di Buda.</p>
-                        </div>
-                    </div>
+          <div class="time-card">
+            <div class="card-time-col">18:00</div>
+            <div class="card-content-col">
+              <p class="card-details">Crociera serale sul Danubio con drink incluso.</p>
+            </div>
+          </div>
 
-                    <div class="time-card">
-                        <div class="card-time-col">14:30</div>
-                        <div class="card-content-col">
-                            <p class="card-details">Incontro con la guida turistica.<br>Visita del Quartiere del Castello di Buda (Chiesa di Mattia, Bastione dei Pescatori e Palazzo Reale).</p>
-                        </div>
-                    </div>
+          <div class="time-card">
+            <div class="card-time-col">19:30</div>
+            <div class="card-content-col">
+              <p class="card-details">Trasferimento al ristorante.</p>
+            </div>
+          </div>
 
-                    <div class="time-card">
-                        <div class="card-time-col">17:30</div>
-                        <div class="card-content-col">
-                            <p class="card-details">Visita libera alla città.</p>
-                        </div>
-                    </div>
+          <div class="time-card">
+            <div class="card-time-col">20:00</div>
+            <div class="card-content-col">
+              <p class="card-details">Cena di gruppo presso il ristorante <a href="https://www.szazevesetterem.hu/eng/"
+                  target="_blank" rel="noopener">Százéves Étterem</a>.</p>
+            </div>
+          </div>
 
-                    <div class="time-card">
-                        <div class="card-time-col">19:00</div>
-                        <div class="card-content-col">
-                            <p class="card-details">Trasferimento al ristorante.</p>
-                        </div>
-                    </div>
-
-                    <div class="time-card">
-                        <div class="card-time-col">19:30</div>
-                        <div class="card-content-col">
-                            <p class="card-details">Cena di gruppo presso il ristorante <a href="https://kehli.hu/home-en" target="_blank" rel="noopener">Kéhli Vendéglő</a>.</p>
-                        </div>
-                    </div>
-
-                    <div class="time-card">
-                        <div class="card-time-col">21:30</div>
-                        <div class="card-content-col">
-                            <p class="card-details">Rientro in Hotel.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="day-side-image">
-                    <img src="budapest-castello2.jpg" alt="Castello di Buda">
-                </div>
-            </section>
-
-            <!-- MERCOLEDI' 7 OTTOBRE -->
-            <section class="day-section">
-                <h2 class="day-title">Mercoledì 7 Ottobre</h2>
-
-                <div class="day-cards-wrapper">
-                    <div class="time-card">
-                        <div class="card-time-col">08:30</div>
-                        <div class="card-content-col">
-                            <p class="card-details">Partenza dall'hotel.</p>
-                        </div>
-                    </div>
-
-                    <div class="time-card">
-                        <div class="card-time-col">09:00</div>
-                        <div class="card-content-col">
-                            <p class="card-details">Incontro con la guida turistica.<br>Tour guidato: Grande Sinagoga, centro di Pest, Ponte delle Catene, Basilica di Santo Stefano e Parlamento.</p>
-                        </div>
-                    </div>
-
-                    <div class="time-card">
-                        <div class="card-time-col">12:00</div>
-                        <div class="card-content-col">
-                            <p class="card-details">Pranzo libero.</p>
-                        </div>
-                    </div>
-
-                    <div class="time-card">
-                        <div class="card-time-col">14:30</div>
-                        <div class="card-content-col">
-                            <p class="card-details">Trasferimento con mezzi pubblici.</p>
-                        </div>
-                    </div>
-
-                    <div class="time-card">
-                        <div class="card-time-col">15:00</div>
-                        <div class="card-content-col">
-                            <p class="card-details">Visita alla Piazza degli Eroi e al Castello di Vajdahunyad.</p>
-                        </div>
-                    </div>
-
-                    <div class="time-card">
-                        <div class="card-time-col">17:00</div>
-                        <div class="card-content-col">
-                            <p class="card-details">Trasferimento con mezzi pubblici.</p>
-                        </div>
-                    </div>
-
-                    <div class="time-card">
-                        <div class="card-time-col">18:00</div>
-                        <div class="card-content-col">
-                            <p class="card-details">Crociera serale sul Danubio con drink incluso.</p>
-                        </div>
-                    </div>
-
-                    <div class="time-card">
-                        <div class="card-time-col">19:30</div>
-                        <div class="card-content-col">
-                            <p class="card-details">Trasferimento al ristorante.</p>
-                        </div>
-                    </div>
-
-                    <div class="time-card">
-                        <div class="card-time-col">20:00</div>
-                        <div class="card-content-col">
-                            <p class="card-details">Cena di gruppo presso il ristorante <a href="https://www.szazevesetterem.hu/eng/" target="_blank" rel="noopener">Százéves Étterem</a>.</p>
-                        </div>
-                    </div>
-
-                    <div class="time-card">
-                        <div class="card-time-col">22:00</div>
-                        <div class="card-content-col">
-                            <p class="card-details">Rientro in Hotel.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="day-side-image">
-                    <img src="parlamento.jpg" alt="Parlamento di Budapest">
-                </div>
-            </section>
-
-            <!-- GIOVEDI' 8 OTTOBRE -->
-            <section class="day-section">
-                <h2 class="day-title">Giovedì 8 Ottobre</h2>
-
-                <div class="day-cards-wrapper">
-                    <div class="time-card">
-                        <div class="card-time-col">09:00</div>
-                        <div class="card-content-col">
-                            <p class="card-details">Partenza dall'hotel e visita libera alla città.</p>
-                        </div>
-                    </div>
-
-                    <div class="time-card">
-                        <div class="card-time-col">12:30</div>
-                        <div class="card-content-col">
-                            <p class="card-details">Pranzo libero.</p>
-                        </div>
-                    </div>
-
-                    <div class="time-card">
-                        <div class="card-time-col">14:30</div>
-                        <div class="card-content-col">
-                            <p class="card-details">Visita libera alla città e recupero bagagli.</p>
-                        </div>
-                    </div>
-
-                    <div class="time-card">
-                        <div class="card-time-col">17:00</div>
-                        <div class="card-content-col">
-                            <p class="card-details">Trasferimento dall’hotel all’aeroporto di Budapest.</p>
-                        </div>
-                    </div>
-
-                    <div class="time-card">
-                        <div class="card-time-col">19:55</div>
-                        <div class="card-content-col">
-                            <p class="card-details">Volo Ryanair Budapest ➔ Bergamo.</p>
-                        </div>
-                    </div>
-
-                    <div class="time-card">
-                        <div class="card-time-col">21:35</div>
-                        <div class="card-content-col">
-                            <p class="card-details">Arrivo all’aeroporto di Bergamo.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="day-side-image">
-                    <img src="budapest-pontecatene1.jpg" alt="Budapest">
-                </div>
-            </section>
-
+          <div class="time-card">
+            <div class="card-time-col">22:00</div>
+            <div class="card-content-col">
+              <p class="card-details">Rientro in Hotel.</p>
+            </div>
+          </div>
         </div>
 
-        <!-- INFORMAZIONI UTILI -->
-        <footer class="info-section">
-            <h2>💡 Informazioni Utili</h2>
-            <div class="info-grid">
+        <div class="day-side-image">
+          <img src="parlamento.jpg" alt="Parlamento di Budapest">
+        </div>
+      </section>
 
-                <div class="info-card">
-                    <h3>🎫 Carta d'imbarco Ryanair</h3>
-                    <p>Esclusivamente digitali via App Ryanair. Non è più possibile stamparle o usarle in PDF.</p>
-                </div>
+      <!-- GIOVEDI' 8 OTTOBRE -->
+      <section class="day-section">
+        <h2 class="day-title">Giovedì 8 Ottobre</h2>
 
-                <div class="info-card">
-                    <h3>🧳 Bagagli a bordo</h3>
-                    <p>Un bagaglio piccolo (40x30x20cm) + una valigia da 10kg max (55x40x20cm) in cappelliera.</p>
-                </div>
-
-                <div class="info-card">
-                    <h3>🏨 Rientro in Hotel</h3>
-                    <p>Previsto direttamente dopo cena. Consigliato abbigliamento a strati per la sera.</p>
-                </div>
-
-                <div class="info-card">
-                    <h3>💳 Valuta e Pagamenti</h3>
-                    <p>Fiorino Ungherese (HUF), 1000 HUF ≈ 2,83€. Consigliate carte ed evitate i cambiavalute in centro.</p>
-                </div>
-
-                <div class="info-card">
-                    <h3>☀️ Meteo e Abbigliamento</h3>
-                    <p>Temperature tra 8°C e 17°C, cielo nuvoloso con possibili piogge. Portare un ombrello.</p>
-                </div>
-
+        <div class="day-cards-wrapper">
+          <div class="time-card">
+            <div class="card-time-col">09:00</div>
+            <div class="card-content-col">
+              <p class="card-details">Partenza dall'hotel e visita libera alla città.</p>
             </div>
-        </footer>
+          </div>
 
-        <!-- TABELLA PRENOTAZIONI -->
-        <div class="table-card-section">
-            <div class="table-header-title">
-                <h2>✈️ Riferimenti e prenotazioni volo</h2>
+          <div class="time-card">
+            <div class="card-time-col">12:30</div>
+            <div class="card-content-col">
+              <p class="card-details">Pranzo libero.</p>
             </div>
+          </div>
 
-            <div class="table-wrapper">
-                <table class="modern-table">
-                    <thead>
-                        <tr>
-                            <th>PASSEGGERO</th>
-                            <th style="text-align: right;">PRENOTAZIONE</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>BENINI ANNAMARIA</td><td style="text-align: right;"><span class="pnr-badge">C39W3N</span></td></tr>
-                        <tr><td>BONAITI CLAUDIA</td><td style="text-align: right;"><span class="pnr-badge">C39W3N</span></td></tr>
-                        <tr><td>CADE' ANGELO</td><td style="text-align: right;"><span class="pnr-badge">C39W3N</span></td></tr>
-                        <tr><td>CAGLIONI GIOVANNI</td><td style="text-align: right;"><span class="pnr-badge">C39W3N</span></td></tr>
-                        <tr><td>CAMPANINI DIEGO</td><td style="text-align: right;"><span class="pnr-badge">C39W3N</span></td></tr>
-                        <tr><td>CANDIA OTTAVIO</td><td style="text-align: right;"><span class="pnr-badge">C39W3N</span></td></tr>
-                        <tr><td>CATTANEO ROBERTA</td><td style="text-align: right;"><span class="pnr-badge">O7L7XE</span></td></tr>
-                        <tr><td>COLOMBO FABIO SANTO</td><td style="text-align: right;"><span class="pnr-badge">J3TTVQ</span></td></tr>
-                        <tr><td>COTTINI MAURIZIO</td><td style="text-align: right;"><span class="pnr-badge">SR134Y</span></td></tr>
-                        <tr><td>DELBARBA CLAUDIO</td><td style="text-align: right;"><span class="pnr-badge">C39W3N</span></td></tr>
-                        <tr><td>DI PASQUALE PATRIZIA</td><td style="text-align: right;"><span class="pnr-badge">O7L7XE</span></td></tr>
-                        <tr><td>FACCHI GIOVANNI</td><td style="text-align: right;"><span class="pnr-badge">C39W3N</span></td></tr>
-                        <tr><td>FOINI PAOLA</td><td style="text-align: right;"><span class="pnr-badge">C39W3N</span></td></tr>
-                        <tr><td>FORLANI ALESSANDRA</td><td style="text-align: right;"><span class="pnr-badge">SR134Y</span></td></tr>
-                        <tr><td>GATTI FULVIO</td><td style="text-align: right;"><span class="pnr-badge">C39W3N</span></td></tr>
-                        <tr><td>GIAVARINI MARIA LUISA</td><td style="text-align: right;"><span class="pnr-badge">C39W3N</span></td></tr>
-                        <tr><td>JIMENEZ RIOS MARIA ANGELES</td><td style="text-align: right;"><span class="pnr-badge">C39W3N</span></td></tr>
-                        <tr><td>MAFFIOLETTI OLIVIERO</td><td style="text-align: right;"><span class="pnr-badge">C39W3N</span></td></tr>
-                        <tr><td>MANCUSO MARIELLA</td><td style="text-align: right;"><span class="pnr-badge">C39W3N</span></td></tr>
-                        <tr><td>MASPER ELVIRA ELENA</td><td style="text-align: right;"><span class="pnr-badge">O7L7XE</span></td></tr>
-                        <tr><td>MAZZOLA ANNALIA</td><td style="text-align: right;"><span class="pnr-badge">O7L7XE</span></td></tr>
-                        <tr><td>MILESI ALDO</td><td style="text-align: right;"><span class="pnr-badge">C39W3N</span></td></tr>
-                        <tr><td>NOZZA GIACOMO</td><td style="text-align: right;"><span class="pnr-badge">C39W3N</span></td></tr>
-                        <tr><td>PARIMBELLI ELISABETTA</td><td style="text-align: right;"><span class="pnr-badge">O7L7XE</span></td></tr>
-                        <tr><td>PEZZOTTA GIOVANNA</td><td style="text-align: right;"><span class="pnr-badge">C39W3N</span></td></tr>
-                        <tr><td>POZZI CLEMENTE MARIO</td><td style="text-align: right;"><span class="pnr-badge">O7L7XE</span></td></tr>
-                        <tr><td>POZZI MASSIMILIANO</td><td style="text-align: right;"><span class="pnr-badge">C39W3N</span></td></tr>
-                        <tr><td>ROSSETTI ANTONELLA GIOVANNA</td><td style="text-align: right;"><span class="pnr-badge">C39W3N</span></td></tr>
-                        <tr><td>SERIGHELLI PIERA</td><td style="text-align: right;"><span class="pnr-badge">C39W3N</span></td></tr>
-                        <tr><td>TESTA ROBERTA</td><td style="text-align: right;"><span class="pnr-badge">C39W3N</span></td></tr>
-                    </tbody>
-                </table>
+          <div class="time-card">
+            <div class="card-time-col">14:30</div>
+            <div class="card-content-col">
+              <p class="card-details">Visita libera alla città e recupero bagagli.</p>
             </div>
+          </div>
+
+          <div class="time-card">
+            <div class="card-time-col">17:00</div>
+            <div class="card-content-col">
+              <p class="card-details">Trasferimento dall’hotel all’aeroporto di Budapest.</p>
+            </div>
+          </div>
+
+          <div class="time-card">
+            <div class="card-time-col">19:55</div>
+            <div class="card-content-col">
+              <p class="card-details">Volo Ryanair Budapest ➔ Bergamo.</p>
+            </div>
+          </div>
+
+          <div class="time-card">
+            <div class="card-time-col">21:35</div>
+            <div class="card-content-col">
+              <p class="card-details">Arrivo all’aeroporto di Bergamo.</p>
+            </div>
+          </div>
         </div>
 
-        <!-- SEZIONE MENU -->
-        <div class="menu-section">
-            <h2 class="menu-main-title">🍽️ Menù Cene di Gruppo</h2>
-
-            <!-- CENA MARTEDÌ -->
-            <div class="menu-day-block">
-                <h3 class="menu-day-subtitle">Martedì 6 Ottobre - Kéhli Vendéglő</h3>
-                <div class="menu-grid">
-                    <div class="menu-card" style="grid-column: 1 / -1;">
-                        <div class="menu-card-header">Menù Unico Tradizionale</div>
-                        <div class="menu-courses">
-                            <div class="menu-item">
-                                <span class="menu-item-type">Primo</span>
-                                <div class="menu-item-title">Zuppa di fagiano con uovo di quaglia</div>
-                                <span class="allergen-tag">Senza Lattosio</span>
-                            </div>
-                            <div class="menu-item">
-                                <span class="menu-item-type">Secondo</span>
-                                <div class="menu-item-title">Coscia d'oca al forno con cavolo stufato e purè</div>
-                                <span class="allergen-tag">Senza Lattosio</span> <span class="allergen-tag">Senza Glutine</span>
-                            </div>
-                            <div class="menu-item">
-                                <span class="menu-item-type">Dolce</span>
-                                <div class="menu-item-title">Torta al cioccolato di Lenke</div>
-                                <span class="allergen-tag">Senza Lattosio</span>
-                            </div>
-                        </div>
-                        <div class="menu-people">
-                            <h4>Partecipanti</h4>
-                            <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;">Menù fisso concordato per tutto il gruppo.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CENA MERCOLEDÌ -->
-            <div class="menu-day-block">
-                <h3 class="menu-day-subtitle">Mercoledì 7 Ottobre - Százéves Étterem</h3>
-                <div class="menu-grid">
-                    <div class="menu-card">
-                        <div class="menu-card-header">Menù 1</div>
-                        <div class="menu-courses">
-                            <div class="menu-item">
-                                <span class="menu-item-type">Zuppa</span>
-                                <div class="menu-item-title">Zuppa Palóc (carne, fagiolini, panna acida)</div>
-                            </div>
-                            <div class="menu-item">
-                                <span class="menu-item-type">Secondo</span>
-                                <div class="menu-item-title">Spezzatino di manzo con gnocchetti</div>
-                            </div>
-                            <div class="menu-item">
-                                <span class="menu-item-type">Dolce</span>
-                                <div class="menu-item-title">Crêpe alla Gundel (noci e cioccolato)</div>
-                            </div>
-                        </div>
-                        <div class="menu-people">
-                            <h4>Partecipanti (11)</h4>
-                            <ul class="menu-people-list">
-                                <li>BENINI ANNAMARIA</li>
-                                <li>BONAITI CLAUDIA</li>
-                                <li>CADE' ANGELO</li>
-                                <li>CAGLIONI GIOVANNI</li>
-                                <li>CAMPANINI DIEGO</li>
-                                <li>CANDIA OTTAVIO</li>
-                                <li>CATTANEO ROBERTA</li>
-                                <li>COLOMBO FABIO SANTO</li>
-                                <li>COTTINI MAURIZIO</li>
-                                <li>DELBARBA CLAUDIO</li>
-                                <li>DI PASQUALE PATRIZIA</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="menu-card">
-                        <div class="menu-card-header">Menù 2</div>
-                        <div class="menu-courses">
-                            <div class="menu-item">
-                                <span class="menu-item-type">Zuppa</span>
-                                <div class="menu-item-title">Zuppa Gulasch alla moda ungherese</div>
-                            </div>
-                            <div class="menu-item">
-                                <span class="menu-item-type">Secondo</span>
-                                <div class="menu-item-title">Filetto di manzo con salsa ai funghi e patate</div>
-                            </div>
-                            <div class="menu-item">
-                                <span class="menu-item-type">Dolce</span>
-                                <div class="menu-item-title">Dolce Somlói (Pandispagna, crema, noci e cioccolato)</div>
-                            </div>
-                        </div>
-                        <div class="menu-people">
-                            <h4>Partecipanti (12)</h4>
-                            <ul class="menu-people-list">
-                                <li>FORLANI ALESSANDRA</li>
-                                <li>GATTI FULVIO</li>
-                                <li>GIAVARINI MARIA LUISA</li>
-                                <li>JIMENEZ RIOS MARIA ANGELES</li>
-                                <li>MAFFIOLETTI OLIVIERO</li>
-                                <li>MANCUSO MARIELLA</li>
-                                <li>MASPER ELVIRA ELENA</li>
-                                <li>MAZZOLA ANNALIA</li>
-                                <li>MILESI ALDO</li>
-                                <li>NOZZA GIACOMO</li>
-                                <li>PARIMBELLI ELISABETTA</li>
-                                <li>PEZZOTTA GIOVANNA</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+        <div class="day-side-image">
+          <img src="budapest-pontecatene1.jpg" alt="Budapest">
         </div>
+      </section>
 
     </div>
+
+    <!-- INFORMAZIONI UTILI -->
+    <footer class="info-section">
+      <h2>💡 Informazioni Utili</h2>
+      <div class="info-grid">
+
+        <div class="info-card">
+          <h3>🎫 Carta d'imbarco Ryanair</h3>
+          <p>Esclusivamente digitali via App Ryanair. Non è più possibile stamparle o usarle in PDF.</p>
+        </div>
+
+        <div class="info-card">
+          <h3>🧳 Bagagli a bordo</h3>
+          <p>Un bagaglio piccolo (40x30x20cm) + una valigia da 10kg max (55x40x20cm) in cappelliera.</p>
+        </div>
+
+        <div class="info-card">
+          <h3>🏨 Rientro in Hotel</h3>
+          <p>Previsto direttamente dopo cena. Consigliato abbigliamento a strati per la sera.</p>
+        </div>
+
+        <div class="info-card">
+          <h3>💳 Valuta e Pagamenti</h3>
+          <p>Fiorino Ungherese (HUF), 1000 HUF ≈ 2,83€. Consigliate carte ed evitate i cambiavalute in centro.</p>
+        </div>
+
+        <div class="info-card">
+          <h3>☀️ Meteo e Abbigliamento</h3>
+          <p>Temperature tra 8°C e 17°C, cielo nuvoloso con possibili piogge. Portare un ombrello.</p>
+        </div>
+
+      </div>
+    </footer>
+
+    <!-- SEZIONE MENU -->
+    <div class="menu-section">
+      <h2 class="menu-main-title">🍽️ Menù Cene di Gruppo</h2>
+
+      <!-- CENA MARTEDÌ -->
+      <div class="menu-day-block">
+        <h3 class="menu-day-subtitle">Martedì 6 Ottobre - Kéhli Vendéglő</h3>
+        <div class="menu-grid">
+          <div class="menu-card" style="grid-column: 1 / -1;">
+            <div class="menu-card-header">Menù Unico Tradizionale</div>
+            <div class="menu-courses">
+              <div class="menu-item">
+                <span class="menu-item-type">Primo</span>
+                <div class="menu-item-title">Zuppa di fagiano con uovo di quaglia</div>
+                <span class="allergen-tag">Senza Lattosio</span>
+              </div>
+              <div class="menu-item">
+                <span class="menu-item-type">Secondo</span>
+                <div class="menu-item-title">Coscia d'oca al forno con cavolo stufato e purè</div>
+                <span class="allergen-tag">Senza Lattosio</span> <span class="allergen-tag">Senza Glutine</span>
+              </div>
+              <div class="menu-item">
+                <span class="menu-item-type">Dolce</span>
+                <div class="menu-item-title">Torta al cioccolato di Lenke</div>
+                <span class="allergen-tag">Senza Lattosio</span>
+              </div>
+            </div>
+            <div class="menu-people">
+              <h4>Partecipanti</h4>
+              <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;">Menù fisso concordato per tutto il
+                gruppo.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CENA MERCOLEDÌ -->
+      <div class="menu-day-block">
+        <h3 class="menu-day-subtitle">Mercoledì 7 Ottobre - Százéves Étterem</h3>
+        <div class="menu-grid">
+          <div class="menu-card">
+            <div class="menu-card-header">Menù 1</div>
+            <div class="menu-courses">
+              <div class="menu-item">
+                <span class="menu-item-type">Zuppa</span>
+                <div class="menu-item-title">Zuppa Palóc (carne, fagiolini, panna acida)</div>
+              </div>
+              <div class="menu-item">
+                <span class="menu-item-type">Secondo</span>
+                <div class="menu-item-title">Spezzatino di manzo con gnocchetti</div>
+              </div>
+              <div class="menu-item">
+                <span class="menu-item-type">Dolce</span>
+                <div class="menu-item-title">Crêpe alla Gundel (noci e cioccolato)</div>
+              </div>
+            </div>
+            <div class="menu-people">
+              <h4>Partecipanti (11)</h4>
+              <ul class="menu-people-list">
+                <li>BENINI ANNAMARIA</li>
+                <li>BONAITI CLAUDIA</li>
+                <li>CADE' ANGELO</li>
+                <li>CAGLIONI GIOVANNI</li>
+                <li>CAMPANINI DIEGO</li>
+                <li>CANDIA OTTAVIO</li>
+                <li>CATTANEO ROBERTA</li>
+                <li>COLOMBO FABIO SANTO</li>
+                <li>COTTINI MAURIZIO</li>
+                <li>DELBARBA CLAUDIO</li>
+                <li>DI PASQUALE PATRIZIA</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="menu-card">
+            <div class="menu-card-header">Menù 2</div>
+            <div class="menu-courses">
+              <div class="menu-item">
+                <span class="menu-item-type">Zuppa</span>
+                <div class="menu-item-title">Zuppa Gulasch alla moda ungherese</div>
+              </div>
+              <div class="menu-item">
+                <span class="menu-item-type">Secondo</span>
+                <div class="menu-item-title">Filetto di manzo con salsa ai funghi e patate</div>
+              </div>
+              <div class="menu-item">
+                <span class="menu-item-type">Dolce</span>
+                <div class="menu-item-title">Dolce Somlói (Pandispagna, crema, noci e cioccolato)</div>
+              </div>
+            </div>
+            <div class="menu-people">
+              <h4>Partecipanti (12)</h4>
+              <ul class="menu-people-list">
+                <li>FORLANI ALESSANDRA</li>
+                <li>GATTI FULVIO</li>
+                <li>GIAVARINI MARIA LUISA</li>
+                <li>JIMENEZ RIOS MARIA ANGELES</li>
+                <li>MAFFIOLETTI OLIVIERO</li>
+                <li>MANCUSO MARIELLA</li>
+                <li>MASPER ELVIRA ELENA</li>
+                <li>MAZZOLA ANNALIA</li>
+                <li>MILESI ALDO</li>
+                <li>NOZZA GIACOMO</li>
+                <li>PARIMBELLI ELISABETTA</li>
+                <li>PEZZOTTA GIOVANNA</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- GUIDA RITIRO CARTA D'IMBARCO CON APP RYANAIR -->
+    <section class="boarding-guide-section">
+      <div class="guide-header">
+        <h2>📱 Guida: Ottenere la Carta d'Imbarco su App Ryanair</h2>
+        <p>Segui questi semplici passaggi usando il codice di prenotazione (PNR) assegnato al tuo nome.</p>
+      </div>
+
+      <div class="steps-container">
+        <!-- STEP 1 -->
+        <div class="step-card">
+          <span class="step-badge">1</span>
+          <h3 class="step-title">Apri l'App e vai su "I Miei Viaggi"</h3>
+          <p class="step-description">Scarica/apri l'App Ryanair sul tuo smartphone e seleziona la voce <strong>"I miei
+              viaggi"</strong> in basso o l'opzione <strong>"I miei voli / Recupera prenotazione"</strong>.</p>
+          <div class="step-image-container">
+            <img src="ryanair1.jpg" alt="Schermata iniziale App Ryanair">
+          </div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="step-card">
+          <span class="step-badge">2</span>
+          <h3 class="step-title">Inserisci PNR ed Email</h3>
+          <p class="step-description">Inserisci il <strong>Codice di Prenotazione (PNR)</strong> a 6 caratteri (es.
+            C39W3N) recuperato dalla tabella sopra e l'indirizzo <strong>Email</strong> utilizzato per la prenotazione.
+          </p>
+          <div class="step-image-container">
+            <img src="ryanair2.jpg" alt="Inserimento Codice PNR su App Ryanair">
+          </div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="step-card">
+          <span class="step-badge">3</span>
+          <h3 class="step-title">Effettua il Check-in</h3>
+          <p class="step-description">Seleziona il volo di riferimento e premi su <strong>"Check-in"</strong>. Conferma
+            i dati dei passeggeri e completa la procedura fino al termine.</p>
+          <div class="step-image-container">
+            <img src="ryanair3.jpg" alt="Procedura di Check-in App Ryanair">
+          </div>
+        </div>
+
+        <!-- STEP 4 -->
+        <div class="step-card">
+          <span class="step-badge">4</span>
+          <h3 class="step-title">Mostra la Carta d'Imbarco</h3>
+          <p class="step-description">Al termine premi su <strong>"Visualizza carte d'imbarco"</strong>. Troverai il QR
+            code da mostrare direttamente ai controlli di sicurezza e al gate dell'aeroporto.</p>
+          <div class="step-image-container">
+            <img src="ryanair4.jpg" alt="Visualizzazione Carta d'Imbarco Digitale">
+          </div>
+        </div>
+
+        <!-- STEP 5 -->
+        <div class="step-card">
+          <span class="step-badge">4</span>
+          <h3 class="step-title">Mostra la Carta d'Imbarco</h3>
+          <p class="step-description">Al termine premi su <strong>"Visualizza carte d'imbarco"</strong>. Troverai il QR
+            code da mostrare direttamente ai controlli di sicurezza e al gate dell'aeroporto.</p>
+          <div class="step-image-container">
+            <img src="ryanair5.jpg" alt="Visualizzazione Carta d'Imbarco Digitale">
+          </div>
+        </div>
+
+        <!-- STEP 6 -->
+        <div class="step-card">
+          <span class="step-badge">4</span>
+          <h3 class="step-title">Mostra la Carta d'Imbarco</h3>
+          <p class="step-description">Al termine premi su <strong>"Visualizza carte d'imbarco"</strong>. Troverai il QR
+            code da mostrare direttamente ai controlli di sicurezza e al gate dell'aeroporto.</p>
+          <div class="step-image-container">
+            <img src="ryanair6.jpg" alt="Visualizzazione Carta d'Imbarco Digitale">
+          </div>
+        </div>
+
+        <!-- STEP 7 -->
+        <div class="step-card">
+          <span class="step-badge">4</span>
+          <h3 class="step-title">Mostra la Carta d'Imbarco</h3>
+          <p class="step-description">Al termine premi su <strong>"Visualizza carte d'imbarco"</strong>. Troverai il QR
+            code da mostrare direttamente ai controlli di sicurezza e al gate dell'aeroporto.</p>
+          <div class="step-image-container">
+            <img src="ryanair7.jpg" alt="Visualizzazione Carta d'Imbarco Digitale">
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TABELLA PRENOTAZIONI -->
+    <div class="table-card-section">
+      <div class="table-header-title">
+        <h2>✈️ Riferimenti e prenotazioni volo</h2>
+      </div>
+
+      <div class="table-wrapper">
+        <table class="modern-table">
+          <thead>
+            <tr>
+              <th>PASSEGGERO</th>
+              <th style="text-align: center;">CODICE PRENOTAZIONE</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>BENINI ANNAMARIA</td>
+              <td style="text-align: center;"><span class="pnr-badge">C39W3N</span></td>
+            </tr>
+            <tr>
+              <td>CANDIA OTTAVIO</td>
+              <td style="text-align: center;"><span class="pnr-badge">C39W3N</span></td>
+            </tr>
+            <tr>
+              <td>MAFFIOLETTI OLIVIERO</td>
+              <td style="text-align: center;"><span class="pnr-badge">C39W3N</span></td>
+            </tr>
+            <tr>
+              <td>PARIMBELLI ELISABETTA</td>
+              <td style="text-align: center;"><span class="pnr-badge">O7L7XE</span></td>
+            </tr>
+            <tr>
+              <td>TESTA MARCO</td>
+              <td style="text-align: center;"><span class="pnr-badge">C39W3N</span></td>
+            </tr>
+            <tr>
+              <td>VAVASSORI PIERANGELO</td>
+              <td style="text-align: center;"><span class="pnr-badge">O7L7XE</span></td>
+            </tr>
+            <tr>
+              <td>VECCHI ALBINA</td>
+              <td style="text-align: center;"><span class="pnr-badge">C39W3N</span></td>
+            </tr>
+            <tr>
+              <td>BONAITI CLAUDIA</td>
+              <td style="text-align: center;"><span class="pnr-badge">C39W3N</span></td>
+            </tr>
+            <tr>
+              <td>CADE' ANGELO</td>
+              <td style="text-align: center;"><span class="pnr-badge">C39W3N</span></td>
+            </tr>
+            <tr>
+              <td>CAGLIONI GIOVANNI</td>
+              <td style="text-align: center;"><span class="pnr-badge">C39W3N</span></td>
+            </tr>
+            <tr>
+              <td>CAMPANINI DIEGO</td>
+              <td style="text-align: center;"><span class="pnr-badge">C39W3N</span></td>
+            </tr>
+            <tr>
+              <td>CATTANEO ROBERTA</td>
+              <td style="text-align: center;"><span class="pnr-badge">O7L7XE</span></td>
+            </tr>
+            <tr>
+              <td>COLOMBO FABIO SANTO</td>
+              <td style="text-align: center;"><span class="pnr-badge">J3TTVQ</span></td>
+            </tr>
+            <tr>
+              <td>COTTINI MAURIZIO</td>
+              <td style="text-align: center;"><span class="pnr-badge">SR134Y</span></td>
+            </tr>
+            <tr>
+              <td>DELBARBA CLAUDIO</td>
+              <td style="text-align: center;"><span class="pnr-badge">C39W3N</span></td>
+            </tr>
+            <tr>
+              <td>DI PASQUALE PATRIZIA</td>
+              <td style="text-align: center;"><span class="pnr-badge">O7L7XE</span></td>
+            </tr>
+            <tr>
+              <td>FACCHI GIOVANNI</td>
+              <td style="text-align: center;"><span class="pnr-badge">C39W3N</span></td>
+            </tr>
+            <tr>
+              <td>FOINI PAOLA</td>
+              <td style="text-align: center;"><span class="pnr-badge">C39W3N</span></td>
+            </tr>
+            <tr>
+              <td>FORLANI ALESSANDRA</td>
+              <td style="text-align: center;"><span class="pnr-badge">SR134Y</span></td>
+            </tr>
+            <tr>
+              <td>GATTI FULVIO</td>
+              <td style="text-align: center;"><span class="pnr-badge">C39W3N</span></td>
+            </tr>
+            <tr>
+              <td>GIAVARINI MARIA LUISA</td>
+              <td style="text-align: center;"><span class="pnr-badge">C39W3N</span></td>
+            </tr>
+            <tr>
+              <td>JIMENEZ RIOS MARIA ANGELES</td>
+              <td style="text-align: center;"><span class="pnr-badge">C39W3N</span></td>
+            </tr>
+            <tr>
+              <td>MANCUSO MARIELLA</td>
+              <td style="text-align: center;"><span class="pnr-badge">C39W3N</span></td>
+            </tr>
+            <tr>
+              <td>MASPER ELVIRA ELENA</td>
+              <td style="text-align: center;"><span class="pnr-badge">O7L7XE</span></td>
+            </tr>
+            <tr>
+              <td>MAZZOLA ANNALIA</td>
+              <td style="text-align: center;"><span class="pnr-badge">O7L7XE</span></td>
+            </tr>
+            <tr>
+              <td>MILESI ALDO</td>
+              <td style="text-align: center;"><span class="pnr-badge">C39W3N</span></td>
+            </tr>
+            <tr>
+              <td>NOZZA GIACOMO</td>
+              <td style="text-align: center;"><span class="pnr-badge">C39W3N</span></td>
+            </tr>
+            <tr>
+              <td>PEZZOTTA GIOVANNA</td>
+              <td style="text-align: center;"><span class="pnr-badge">C39W3N</span></td>
+            </tr>
+            <tr>
+              <td>POZZI CLEMENTE MARIO</td>
+              <td style="text-align: center;"><span class="pnr-badge">O7L7XE</span></td>
+            </tr>
+            <tr>
+              <td>POZZI MASSIMILIANO</td>
+              <td style="text-align: center;"><span class="pnr-badge">C39W3N</span></td>
+            </tr>
+            <tr>
+              <td>ROSSETTI ANTONELLA GIOVANNA</td>
+              <td style="text-align: center;"><span class="pnr-badge">C39W3N</span></td>
+            </tr>
+            <tr>
+              <td>SERIGHELLI PIERA</td>
+              <td style="text-align: center;"><span class="pnr-badge">C39W3N</span></td>
+            </tr>
+            <tr>
+              <td>TESTA ROBERTA</td>
+              <td style="text-align: center;"><span class="pnr-badge">C39W3N</span></td>
+            </tr>
+            <tr>
+              <td>TOGNI LUCA</td>
+              <td style="text-align: center;"><span class="pnr-badge">C39W3N</span></td>
+            </tr>
+            <tr>
+              <td>VECCHI MARIA CRISTINA</td>
+              <td style="text-align: center;"><span class="pnr-badge">J3TTVQ</span></td>
+            </tr>
+            <tr>
+              <td>ZANCHI ANTONIO GIOVANNI</td>
+              <td style="text-align: center;"><span class="pnr-badge">C39W3N</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+
+  </div>
 
 </body>
 
