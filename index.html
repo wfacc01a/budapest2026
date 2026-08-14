@@ -361,92 +361,6 @@
       border: 1px solid #c7d2fe;
     }
 
-    /* --- GUIDA CHECK-IN RYANAIR --- */
-    .boarding-guide-section {
-      background-color: var(--card-bg);
-      border-radius: 16px;
-      padding: 24px;
-      border: 1px solid var(--border-color);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .guide-header h2 {
-      font-size: 1.4rem;
-      font-weight: 800;
-      color: var(--text-main);
-      margin: 0 0 8px 0;
-    }
-
-    .guide-header p {
-      margin: 0;
-      color: var(--text-muted);
-      font-size: 1rem;
-    }
-
-    .steps-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-    }
-
-    .step-card {
-      background-color: #f8fafc;
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      padding: 16px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .step-badge {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 32px;
-      height: 32px;
-      background-color: var(--primary);
-      color: #ffffff;
-      font-weight: 800;
-      border-radius: 50%;
-      font-size: 0.95rem;
-    }
-
-    .step-title {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--text-main);
-      margin: 0;
-    }
-
-    .step-description {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      margin: 0;
-      line-height: 1.5;
-    }
-
-    .step-image-container {
-      width: 100%;
-      height: 500px;
-      background-color: #e2e8f0;
-      border-radius: 8px;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px dashed var(--border-color);
-    }
-
-    .step-image-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-
     /* --- SEZIONE MENU --- */
     .menu-section {
       background-color: var(--card-bg);
@@ -554,16 +468,6 @@
       font-weight: 600;
     }
 
-    .allergen-tag {
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: #047857;
-      background-color: #d1fae5;
-      padding: 2px 6px;
-      border-radius: 4px;
-      display: inline-block;
-      margin-top: 4px;
-    }
   </style>
 </head>
 
@@ -860,7 +764,7 @@
         <div class="info-card">
           <h3>🎫 Carta d'imbarco Ryanair</h3>
           <p>Le carte d'imbarco sono esclusivamente digitali via App Ryanair. Non è più possibile stamparle o usarle in PDF.<br>
-            Seguire le istruzione indicate nella <a href="#guida-ryanair" rel="noopener">guida</a> per scaricare la carte d'imbarco sul proprio smartphone.
+            Seguire le istruzione fornite separatamente per scaricare le carte d'imbarco sul proprio smartphone.
           </p>
         </div>
 
@@ -1010,114 +914,6 @@
       </div>
 
     </div>
-
-    <!-- GUIDA RITIRO CARTA D'IMBARCO CON APP RYANAIR -->
-    <section class="boarding-guide-section">
-      <div class="guide-header">
-        <h2 id="guida-ryanair">📱 Guida: Ottenere la Carta d'Imbarco su App Ryanair</h2>
-        <p>Segui questi semplici passaggi usando il codice di prenotazione (PNR) assegnato al tuo nome.</p>
-      </div>
-
-      <div class="steps-container">
-        <!-- STEP 1 -->
-        <div class="step-card">
-          <span class="step-badge">1</span>
-          <h3 class="step-title">Apri l'App e vai su "Prenotazioni"</h3>
-          <p class="step-description">Scarica/apri l'App Ryanair sul tuo smartphone e seleziona la voce <strong>"Prenotazioni"</strong>.</p>
-          <div class="step-image-container">
-            <img src="ryanair1.jpg">
-          </div>
-        </div>
-
-        <!-- STEP 2 -->
-        <div class="step-card">
-          <span class="step-badge">2</span>
-          <h3 class="step-title">Trova Prenotazione</h3>
-          <p class="step-description">Seleziona la voce <strong>"Trova Prenotazione"</strong>.
-          </p>
-          <div class="step-image-container">
-            <img src="ryanair2.jpg">
-          </div>
-        </div>
-
-        <!-- STEP 3 -->
-        <div class="step-card">
-          <span class="step-badge">3</span>
-          <h3 class="step-title">Inserisci dati</h3>
-          <p class="step-description">Inserisci il tuo <strong>Numero di Prenotazione</strong> recuperato dalla <a href="#ryanair-pnr" rel="noopener">tabella</a>, l'indirizzo <strong>Email</strong> walter.facchi@gmail.com e premi su <strong>"Recupera"</strong>.</p>
-          <div class="step-image-container">
-            <img src="ryanair3.jpg">
-          </div>
-        </div>
-
-        <!-- STEP 4 -->
-        <div class="step-card">
-          <span class="step-badge">4</span>
-          <h3 class="step-title">Mostra la Carta d'Imbarco</h3>
-          <p class="step-description">Al termine premi su <strong>"Visualizza carte d'imbarco"</strong>. Troverai il QR
-            code da mostrare direttamente ai controlli di sicurezza e al gate dell'aeroporto.</p>
-          <div class="step-image-container">
-            <img src="ryanair4.jpg">
-          </div>
-        </div>
-
-        <!-- STEP 5 -->
-        <div class="step-card">
-          <span class="step-badge">5</span>
-          <h3 class="step-title">Mostra la Carta d'ImbarcoXXXXX</h3>
-          <p class="step-description">Seleziona la voce <strong>"Carte d'imbarco"</strong>.</p>
-          <div class="step-image-container">
-            <img src="ryanair5.jpg">
-          </div>
-        </div>
-
-        <!-- STEP 6 -->
-        <div class="step-card">
-          <span class="step-badge">6</span>
-          <h3 class="step-title">Mostra la Carta d'Imbarco</h3>
-          <p class="step-description">Seleziona la voce <strong>"Carte d'imbarco"</strong>.</p>
-          <div class="step-image-container">
-            <img src="ryanair6.jpg">
-          </div>
-        </div>
-
-        <!-- STEP 7 -->
-        <div class="step-card">
-          <span class="step-badge">7</span>
-          <h3 class="step-title">Visualizza la Carta d'Imbarco</h3>
-          <p class="step-description">Scorri le carte d'imbarco verso sinistra o destra fino a individuare la tua. Puoi salvare la carta d'imbarco nel wallet premento il pulsante <strong>"Aggiungi a Google Wallet"</strong> oppure scattare una foto dello schermo dello smartphone</p>
-          <div class="step-image-container">
-            <img src="ryanair7.jpg" alt="Visualizzazione Carta d'Imbarco Digitale">
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- TABELLA PRENOTAZIONI -->
-    <div class="table-card-section">
-      <div class="table-header-title">
-        <h2 id="ryanair-pnr">✈️ Riferimenti e prenotazioni volo</h2>
-      </div>
-
-      <div class="table-wrapper">
-        <table class="modern-table">
-          <thead>
-            <tr>
-              <th>PASSEGGERO</th>
-              <th style="text-align: center;">NUMERO PRENOTAZIONE</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <tr><td>BENINI ANNAMARIA</td><td style="text-align: center;"><span class="pnr-badge">xxxx</span></td></tr>
-         
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-
 
   </div>
 
